@@ -1,0 +1,13 @@
+{
+  "user": "wow",
+  "pass": "pass",
+  "port": 3000,
+  "time": 3000,
+  "modulePath": "./src/modules/",
+  "gamePath": "/Users/wow/Desktop/steamcmd/gmod/srcds.exe",
+  "arguments": "+map gm_flatgrass +maxplayers 10 +gamemode sandbox",
+  "processName": "srcds.exe",
+  "killServerOnQuit": true,
+  "tokenTimeout": 2500,
+  "ipBlacklist": ["0.0.0.0"]
+}

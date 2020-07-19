@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Source Dedicated Server</title>
+</head>
+<body>
+
+<h1>Dedicated Server status:</h1>
+<p>Status: <span id="serverStatus">Loading...</span></p>
+<button onclick="updateStatus()">Refresh status</button>
+
+<script>
+	function feeech(url, callback) {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function () {
+			if (this.readyState === 4) {
+				callback(this.responseText);
+			}
+		};
+		xhttp.open("GET", url, true);
+		xhttp.send();
+	}
+
+	function updateStatus() {
+		feeech("/api/isOnline", function (data) {
+			document.getElementById("serverStatus").innerText = data;
+		})
+	}
+
+	updateStatus();
+</script>
+</body>
+</html>
